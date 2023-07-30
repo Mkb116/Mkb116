@@ -1,1 +1,22 @@
+import time
+import random
+
+def challenge_group(puzzle, time_limit):
+  """Challenges the group members to solve a puzzle and auto-updates if the response is within a specified time."""
+  start_time = time.time()
+  message = "I have a puzzle for you: " + puzzle
+  print(message)
+  for i in range(time_limit):
+    if time.time() - start_time > i:
+      message = "Time's up! The answer was " + puzzle
+      print(message)
+      break
+    else:
+      message = message + " " + str(i) + " seconds left."
+      print(message)
+
+if __name__ == "__main__":
+  puzzle = "What is the capital of France?"
+  time_limit = 10
+  challenge_group(puzzle, time_limit)
 
